@@ -24,7 +24,7 @@ function App() {
 // Send login credentials to the backend for authentication
 const handleLoginSubmit = (e) => {
   e.preventDefault();
-  axios.post('http://localhost:5000/api/accounts/login', loginForm)
+  axios.post(`${process.env.REACT_APP_API_URL}/api/accounts/login`, loginForm)
     .then((res) => {
       // If login is successful, update authentication state
       setIsAuthenticated(true);
